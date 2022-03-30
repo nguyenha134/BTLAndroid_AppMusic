@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:scaleType="fitXY"
+        android:id="@+id/imgviewbackgroundbanner"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/custom_background_banner" />
+
+    <RelativeLayout
+        android:id="@+id/relative1"
+        android:layout_alignBottom="@+id/imgviewbackgroundbanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/imgviewbanner"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:padding="2dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"/>
+        <TextView
+            android:id="@+id/textviewtitlebannerbaihat"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:text="Lo yeu mat roi"
+            android:textSize="17sp"
+            android:layout_toRightOf="@+id/imgviewbanner"
+            android:layout_alignTop="@+id/imgviewbanner"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <RelativeLayout
+            android:layout_below="@+id/textviewtitlebannerbaihat"
+            android:layout_toRightOf="@+id/imgviewbanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp">
+            <TextView
+                android:id="@+id/textviewnoidung"
+                android:textColor="#fff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:layout_marginRight="40dp"
+                android:maxLines="2"
+                android:text="Chào các bạn đến với ca khúc mới của ca sĩ mới nhất hiệ"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>
