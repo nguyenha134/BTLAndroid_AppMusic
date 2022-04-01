@@ -4,49 +4,42 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Playlist {
-    @SerializedName("TheLoai")
-    @Expose
-    private String idTheLoai;
-    @SerializedName("ChuDe")
-    @Expose
-    private  String idChude;
-    @SerializedName("TenBaiHat")
-    @Expose
+    private  String idPlaylist;
     private  String TenBai;
-    @SerializedName("Hinh Anh")
-    @Expose
-    private  String Hinhtheloai;
+    private String hinhPlaylist;
+    private  String Icon;
 
-    public String getTenBai() {
-        return TenBai;
-    }
-
-    public String getHinhtheloai() {
-        return Hinhtheloai;
-    }
-
-    public String getIdChude() {
-        return idChude;
-    }
-
-    public String getIdTheLoai() {
-        return idTheLoai;
-    }
-
-    public void setHinhtheloai(String hinhtheloai) {
-        Hinhtheloai = hinhtheloai;
-    }
-
-    public void setIdChude(String idChude) {
-        this.idChude = idChude;
-    }
-
-    public void setIdTheLoai(String idTheLoai) {
-        this.idTheLoai = idTheLoai;
+    public String getIdPlaylist() {
+        return idPlaylist;
     }
 
     public void setTenBai(String tenBai) {
         TenBai = tenBai;
     }
+
+    public String getTenBai() {
+        return TenBai;
+    }
+
+    public String getHinhPlaylist() {
+        return hinhPlaylist;
+    }
+
+    public void setHinhPlaylist(String hinhPlaylist) {
+        this.hinhPlaylist = hinhPlaylist;
+    }
+
+    public void setIdPlaylist(String idPlaylist) {
+        this.idPlaylist = idPlaylist;
+    }
+
+    public String getIcon() {
+        return Icon;
+    }
+
+    public void setIcon(String icon) {
+        Icon = icon;
+    }
+
 }
 
