@@ -42,8 +42,8 @@ public class PlaylistAdapter extends ArrayAdapter<Playlist> {
             viewHolder =(ViewHolder) converView.getTag();
         }
         Playlist playlist =getItem(position);
-        Picasso.with(getContext()).load(playlist.getHinhtheloai()).into(viewHolder.imgbackground);
-        Picasso.with(getContext()).load(playlist.getIdChude()).into(viewHolder.imgplaylist);
+        Picasso.with(getContext()).load(playlist.getHinhPlaylist()).into(viewHolder.imgbackground);
+        Picasso.with(getContext()).load(playlist.getIcon()).into(viewHolder.imgplaylist);
         viewHolder.txtTenplaylist.setText(playlist.getTenBai());
        return converView;
     }
