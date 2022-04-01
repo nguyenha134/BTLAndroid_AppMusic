@@ -10,8 +10,6 @@
         android:layout_height="200dp"
         android:background="@color/yellow"
         android:contentDescription="@string/app_name">
-
-
     </androidx.viewpager2.widget.ViewPager2>
 
 

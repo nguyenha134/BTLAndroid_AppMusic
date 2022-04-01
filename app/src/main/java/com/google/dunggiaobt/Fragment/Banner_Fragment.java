@@ -40,9 +40,6 @@ public class Banner_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
        super.onCreateView(inflater, container, savedInstanceState);
-
-
-
         if (R.layout.fragment_banner != 0) {
             view = inflater.inflate(R.layout.fragment_banner,container, false);
             viewPager= view.findViewById(R.id.view_pager_2);
@@ -51,12 +48,8 @@ public class Banner_Fragment extends Fragment {
             return view;
         }
         return null;
-
-
     }
-
     private void  anhxa(){
-
     //   circleIndicator=view.findViewById(R.id.indicatordefault);
    }
     private void  GetData(){

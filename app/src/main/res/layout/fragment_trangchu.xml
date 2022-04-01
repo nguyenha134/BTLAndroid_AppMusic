@@ -8,9 +8,17 @@
     <fragment
         android:id="@+id/fragment_one"
         class="com.google.dunggiaobt.Fragment.Banner_Fragment"
-
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:layout="@layout/fragment_banner"></fragment>
+    <!--begin truong-->
+    <fragment
+        android:id="@+id/fragment_album_hot"
+        class="com.google.dunggiaobt.Fragment.Fragment_Album_Hot_T"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        ></fragment>
+    <!--    end truong-->
 
 </LinearLayout>

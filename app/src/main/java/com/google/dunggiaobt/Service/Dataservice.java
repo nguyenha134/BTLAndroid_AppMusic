@@ -1,5 +1,6 @@
 package com.google.dunggiaobt.Service;
 
+import com.google.dunggiaobt.Model.Album;
 import com.google.dunggiaobt.Model.Quangcao;
 
 import java.util.List;
@@ -11,4 +12,7 @@ public interface Dataservice {
 
     @GET("songbanner.php")
     Call<List<Quangcao>> GetDataBanner();
+    //truong
+    @GET("albumhot.php")
+    Call<List<Album>> GetAlbumHot();
 }

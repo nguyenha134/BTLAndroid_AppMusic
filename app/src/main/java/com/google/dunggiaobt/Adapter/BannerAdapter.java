@@ -22,12 +22,11 @@ import java.util.ArrayList;
 public class BannerAdapter extends RecyclerView.Adapter{
     Context context;
     ArrayList<Quangcao> arrayListBanner;
-
+    int Position=0;
     public BannerAdapter(Context context, ArrayList<Quangcao> arrayListBanner) {
         this.context = context;
         this.arrayListBanner = arrayListBanner;
     }
-
 //    @Override
 //    public int getCount() {
 //        return arrayListBanner.size();
@@ -63,21 +62,19 @@ public class BannerAdapter extends RecyclerView.Adapter{
 //        container.removeView((View) object);
 //    }
 
-
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int position) {
-
+        position=Position;
         LayoutInflater inflater = LayoutInflater.from(context);
         View heroView = inflater.inflate(R.layout.dong_banner, parent, false);
         ViewHolder viewHolder = new ViewHolder(heroView);
-
 
         Picasso.with(context).load(arrayListBanner.get(position).getHinhanh()).into(imgviewbackgroundbanner);
         Picasso.with(context).load(arrayListBanner.get(position).getHinhBaiHat()).into(imgviewsongbanner);
         txttitlesongbanner.setText(arrayListBanner.get(position).getTenBaiHat());
         txtNoidung.setText(arrayListBanner.get(position).getNoidung());
-
+        Position++;
      //   parent.addView(heroView);
         return viewHolder;
 
@@ -95,9 +92,6 @@ public class BannerAdapter extends RecyclerView.Adapter{
              imgviewsongbanner=view.findViewById(R.id.imgviewbanner);
              txttitlesongbanner=view.findViewById(R.id.textviewtitlebannerbaihat);
              txtNoidung=view.findViewById(R.id.textviewnoidung);
-
-
-
         }
     }
 

@@ -65,7 +65,6 @@ public class TraChu_Fragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,14 +73,12 @@ public class TraChu_Fragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-View view;
+    View view;
     @NonNull
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (R.layout.fragment_trangchu != 0) {
             view = inflater.inflate(R.layout.fragment_trangchu,container, false);
-
             return view;
         }
         return null;
