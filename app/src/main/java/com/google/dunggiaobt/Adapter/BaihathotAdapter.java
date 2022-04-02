@@ -16,7 +16,7 @@ import com.google.dunggiaobt.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-
+//vu
 public class BaihathotAdapter extends RecyclerView.Adapter<BaihathotAdapter.ViewHolder>{
     Context context;
     ArrayList<BaiHat> baiHatArrayList;
