@@ -21,7 +21,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
+//truong
 public class DanhSachTatCaAlbum_T extends AppCompatActivity {
 //    //tu album hot staractivity sang day
     RecyclerView recyclerViewallalbum;
