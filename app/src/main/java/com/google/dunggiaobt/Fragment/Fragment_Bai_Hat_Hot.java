@@ -25,7 +25,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
+//VU
 public class Fragment_Bai_Hat_Hot  extends Fragment {
     View view;
     RecyclerView recyclerViewBaiHatHot;
@@ -48,7 +48,7 @@ public class Fragment_Bai_Hat_Hot  extends Fragment {
                 ArrayList<BaiHat> baiHatArrayList=(ArrayList<BaiHat>)response.body();
                 baihathotAdapter= new BaihathotAdapter(getActivity(),baiHatArrayList);
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
-                LinearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+              //  LinearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
                 recyclerViewBaiHatHot.setLayoutManager(linearLayoutManager);
                 recyclerViewBaiHatHot.setAdapter(baihathotAdapter);
             }
