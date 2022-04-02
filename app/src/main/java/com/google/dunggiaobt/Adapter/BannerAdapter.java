@@ -65,7 +65,7 @@ public class BannerAdapter extends RecyclerView.Adapter{
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int position) {
-        position=Position;
+       position=Position;
         LayoutInflater inflater = LayoutInflater.from(context);
         View heroView = inflater.inflate(R.layout.dong_banner, parent, false);
         ViewHolder viewHolder = new ViewHolder(heroView);
@@ -97,13 +97,7 @@ public class BannerAdapter extends RecyclerView.Adapter{
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
     }
-
-
-
-
-
     @Override
     public int getItemCount() {
          return arrayListBanner.size();
