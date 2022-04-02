@@ -20,5 +20,12 @@
 
         ></fragment>
     <!--    end truong-->
-
+    <!--VU-->
+    <fragment
+        android:id="@+id/fragment_playlist"
+        class="com.google.dunggiaobt.Fragment.Fragment_PLaylist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_banner"></fragment>
+    <!--Vuend-->
 </LinearLayout>
