@@ -16,7 +16,7 @@ import com.google.dunggiaobt.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
-
+//VU
 public class PlaylistAdapter extends ArrayAdapter<Playlist> {
     public PlaylistAdapter(@NonNull Context context, int resource, @NonNull List<Playlist> objects) {
         super(context, resource, objects);
