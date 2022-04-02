@@ -15,4 +15,7 @@ public interface Dataservice {
     //truong
     @GET("albumhot.php")
     Call<List<Album>> GetAlbumHot();
+    //Vu
+    @GET("playlistforcurrentday.php")
+    Call<List<MediaStore.Audio.Playlists>> GetPlaylistCurrentDay();
 }
