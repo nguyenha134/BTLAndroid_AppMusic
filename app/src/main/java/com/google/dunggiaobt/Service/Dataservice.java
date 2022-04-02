@@ -20,5 +20,8 @@ public interface Dataservice {
     Call<List<Playlist>> GetPlaylistCurrentDay();
     @GET("baihatduocthich.php")
     Call<List<BaiHat>> GetBaiHatHot();
+    @POST("danhsachbaihat.php")
+    Call<List<BaiHat>> GetDanhsachbaihattheoquangcao(@Field("idquangcao") String idquangcao);
+
 
 }
