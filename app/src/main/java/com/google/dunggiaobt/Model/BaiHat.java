@@ -2,7 +2,7 @@ package com.google.dunggiaobt.Model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
+//vu
 public class BaiHat {
     @SerializedName("IdBaiHat")
     @Expose
