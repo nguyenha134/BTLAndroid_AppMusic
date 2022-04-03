@@ -20,8 +20,6 @@ public class MainViewPagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         switch (position){
-            case 0:
-                return new TraChu_Fragment();
             case 1:
                 return new Tab2Fragment();
             case 2:

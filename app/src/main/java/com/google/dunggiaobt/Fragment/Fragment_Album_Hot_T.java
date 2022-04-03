@@ -3,7 +3,6 @@ package com.google.dunggiaobt.Fragment;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,33 +36,26 @@ public class Fragment_Album_Hot_T extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        if (R.layout.fragment_banner != 0) {
-            view = inflater.inflate(R.layout.fragment_album_hot,container, false);
-            recyclerViewalbum=view.findViewById(R.id.recyclerviewabum);
-            txtxemthemalbum=view.findViewById(R.id.textviewxemthem);
-            txtalbumhot=view.findViewById(R.id.textviewtitleAlbumm);
+        view = inflater.inflate(R.layout.fragment_album_hot,container, false);
+        recyclerViewalbum=view.findViewById(R.id.recyclerviewabum);
+        txtxemthemalbum=view.findViewById(R.id.textviewxemthem);
+        txtalbumhot=view.findViewById(R.id.textviewtitleAlbumm);
 
-            txtxemthemalbum.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent=new Intent(getActivity(), DanhSachTatCaAlbum_T.class);
-                    startActivity(intent);
-                }
-            });
-            GetData();
-            return view;
-        }
+        txtxemthemalbum.setOnClickListener(view -> {
+            Intent intent=new Intent(getActivity(), DanhSachTatCaAlbum_T.class);
+            startActivity(intent);
+        });
+        GetData();
+        return view;
 
 
-
-        return  null;
     }
     private void GetData() {
         Dataservice dataservice= APIService.getService();
         Call<List<Album>> callback =dataservice.GetAlbumHot();
         callback.enqueue(new Callback<List<Album>>() {
             @Override
-            public void onResponse(Call<List<Album>> call, Response<List<Album>> response) {
+            public void onResponse(@NonNull Call<List<Album>> call, @NonNull Response<List<Album>> response) {
                 ArrayList<Album> albumArrayList= (ArrayList<Album>)response.body();
                 // Log.d("dung11",albumArrayList.get(2).getTenAlbum());
 
@@ -74,7 +66,7 @@ public class Fragment_Album_Hot_T extends Fragment {
                 recyclerViewalbum.setAdapter(albumAdapterT);
             }
             @Override
-            public void onFailure(Call<List<Album>> call, Throwable t) {
+            public void onFailure(@NonNull Call<List<Album>> call, @NonNull Throwable t) {
             }
         });
     }

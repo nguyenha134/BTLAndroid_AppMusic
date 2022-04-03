@@ -3,7 +3,7 @@ package com.google.dunggiaobt.Service;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -18,7 +18,7 @@ public class APIRetrofitClient {
                 .readTimeout (  10000, TimeUnit.MILLISECONDS)
                             .writeTimeout (  10000, TimeUnit.MILLISECONDS)
                             .connectTimeout ( 10000, TimeUnit.MILLISECONDS)
-                            .retryOnConnectionFailure (true).protocols(Arrays.asList(Protocol.HTTP_1_1)).build();
+                            .retryOnConnectionFailure (true).protocols(Collections.singletonList(Protocol.HTTP_1_1)).build();
 
 
         Gson gson = new GsonBuilder().setLenient ().create ();

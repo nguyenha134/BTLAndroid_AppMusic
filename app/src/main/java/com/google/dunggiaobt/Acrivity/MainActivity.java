@@ -1,23 +1,25 @@
 package com.google.dunggiaobt.Acrivity;
 
-import androidx.annotation.NonNull;
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import android.os.Bundle;
-import android.view.MenuItem;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.dunggiaobt.R;
-import com.google.dunggiaobt.Fragment.TraChu_Fragment;
 import com.google.dunggiaobt.Adapter.MainViewPagerAdapter;
+import com.google.dunggiaobt.Fragment.TraChu_Fragment;
+import com.google.dunggiaobt.R;
+
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 private ViewPager mViewPager;
 private  BottomNavigationView mBottomNavigationView;
 
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +63,7 @@ private  BottomNavigationView mBottomNavigationView;
             switch (item.getItemId()){
                 case R.id.menu_tab_1:
                     mViewPager.setCurrentItem(0);
-                    TraChu_Fragment tab1Fragment= (TraChu_Fragment) mViewPager.getAdapter().instantiateItem(mViewPager,0);
+                    TraChu_Fragment tab1Fragment= (TraChu_Fragment) Objects.requireNonNull(mViewPager.getAdapter()).instantiateItem(mViewPager,0);
                     tab1Fragment.reLoadData();
                     break;
                 case R.id.menu_tab_2:

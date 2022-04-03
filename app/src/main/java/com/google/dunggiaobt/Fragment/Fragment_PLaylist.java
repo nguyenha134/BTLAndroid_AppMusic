@@ -1,9 +1,8 @@
 package com.google.dunggiaobt.Fragment;
 
-import static android.view.View.*;
+import static android.view.View.MeasureSpec;
 
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,14 +49,14 @@ public class Fragment_PLaylist extends Fragment {
         Call<List<Playlist>> callback = dataservice.GetPlaylistCurrentDay();
         callback.enqueue((new Callback<List<Playlist>>() {
             @Override
-            public void onResponse(Call<List<Playlist>> call, Response<List<Playlist>> response) {
+            public void onResponse(@NonNull Call<List<Playlist>> call, @NonNull Response<List<Playlist>> response) {
                 mangplaylist =(ArrayList<Playlist>)response.body();
-               playlistAdapter = new PlaylistAdapter(getActivity(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,mangplaylist);
+               playlistAdapter = new PlaylistAdapter(requireActivity(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,mangplaylist);
                 lvpLaylist.setAdapter(playlistAdapter);
             }
 
             @Override
-            public void onFailure(Call<List<Playlist>> call, Throwable t) {
+            public void onFailure(@NonNull Call<List<Playlist>> call, @NonNull Throwable t) {
 
             }
         }));

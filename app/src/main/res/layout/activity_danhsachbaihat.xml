@@ -44,7 +44,8 @@
                 android:layout_gravity="center"
                 android:id="@+id/imageviewdanhsachcakhuc"
                 android:layout_width="200dp"
-                android:layout_height="200dp">
+                android:layout_height="200dp"
+                android:contentDescription="@string/todo">
 
             </ImageView>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -59,7 +60,8 @@
         app:layout_anchor="@id/appbarlayout"
         app:layout_behavior="@string/bottom_sheet_behavior"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/todo" />
     <androidx.core.widget.NestedScrollView
 
         android:layout_marginTop="30dp"

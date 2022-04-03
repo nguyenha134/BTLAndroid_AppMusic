@@ -14,7 +14,7 @@
             android:id="@+id/textviewtitleAlbumm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ALBUM HOT"
+            android:text="@string/album_hot"
             android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -23,8 +23,8 @@
             android:id="@+id/textviewxemthem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="Xem Thêm"
+            android:layout_alignParentEnd="true"
+            android:text="@string/xem_th_m"
             android:textColor="#913677" />
     </RelativeLayout>
 

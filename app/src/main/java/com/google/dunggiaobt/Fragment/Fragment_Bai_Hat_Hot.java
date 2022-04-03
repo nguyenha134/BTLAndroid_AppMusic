@@ -1,13 +1,11 @@
 package com.google.dunggiaobt.Fragment;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -25,6 +23,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
 //VU
 public class Fragment_Bai_Hat_Hot  extends Fragment {
     View view;
@@ -44,7 +43,7 @@ public class Fragment_Bai_Hat_Hot  extends Fragment {
         Call<List<BaiHat>> callback =dataservice.GetBaiHatHot();
         callback.enqueue(new Callback<List<BaiHat>>() {
             @Override
-            public void onResponse(Call<List<BaiHat>> call, Response<List<BaiHat>> response) {
+            public void onResponse(@NonNull Call<List<BaiHat>> call, @NonNull Response<List<BaiHat>> response) {
                 ArrayList<BaiHat> baiHatArrayList=(ArrayList<BaiHat>)response.body();
                 baihathotAdapter= new BaihathotAdapter(getActivity(),baiHatArrayList);
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
@@ -54,7 +53,7 @@ public class Fragment_Bai_Hat_Hot  extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<List<BaiHat>> call, Throwable t) {
+            public void onFailure(@NonNull Call<List<BaiHat>> call, @NonNull Throwable t) {
 
             }
         });

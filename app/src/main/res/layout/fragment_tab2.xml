@@ -12,6 +12,6 @@
         android:layout_height="wrap_content"
         android:textColor="@android:color/white"
         android:textSize="30sp"
-        android:text="Tab 2" />
+        android:text="@string/tab_2" />
 
 </FrameLayout>

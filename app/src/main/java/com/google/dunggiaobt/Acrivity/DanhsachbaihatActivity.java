@@ -47,7 +47,7 @@
 //    ImageView imgDanhsachcakhuc;
 //    Quangcao quangcao;
 //    ArrayList<BaiHat> mangbaihat;
-//   // DanhsachbaihatAdapter danhsachbaihatAdapter;
+//    DanhsachbaihatAdapter danhsachbaihatAdapter;
 //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);

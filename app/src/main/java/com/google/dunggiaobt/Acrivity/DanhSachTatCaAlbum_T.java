@@ -1,13 +1,12 @@
 package com.google.dunggiaobt.Acrivity;
 
+import android.os.Bundle;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 
 import com.google.dunggiaobt.Adapter.AllAlbumAdapter_T;
 import com.google.dunggiaobt.Model.Album;
@@ -17,6 +16,7 @@ import com.google.dunggiaobt.Service.Dataservice;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -35,14 +35,9 @@ public class DanhSachTatCaAlbum_T extends AppCompatActivity {
         toolbarallalbum=findViewById(R.id.toolbarallalbum);
 //
         //setSupportActionBar(toolbarallalbum);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Tất Cả Chủ Đề");
-        toolbarallalbum.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+        toolbarallalbum.setNavigationOnClickListener(view -> finish());
 
         GetData();
     }
@@ -52,7 +47,7 @@ public class DanhSachTatCaAlbum_T extends AppCompatActivity {
         Call<List<Album>> callback =dataservice.GetAllAlbum();
         callback.enqueue(new Callback<List<Album>>() {
             @Override
-            public void onResponse(Call<List<Album>> call, Response<List<Album>> response) {
+            public void onResponse(@NonNull Call<List<Album>> call, @NonNull Response<List<Album>> response) {
                 ArrayList<Album> albumArrayList= (ArrayList<Album>)response.body();
                 allAlbumAdapter_t =new AllAlbumAdapter_T(DanhSachTatCaAlbum_T.this,albumArrayList);
                 recyclerViewallalbum.setLayoutManager(new GridLayoutManager(DanhSachTatCaAlbum_T.this,2));
@@ -60,7 +55,7 @@ public class DanhSachTatCaAlbum_T extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<List<Album>> call, Throwable t) {
+            public void onFailure(@NonNull Call<List<Album>> call, @NonNull Throwable t) {
 
             }
         });

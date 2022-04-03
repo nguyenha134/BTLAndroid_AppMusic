@@ -20,7 +20,8 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_gravity="center"
-            android:scaleType="fitXY"></ImageView>
+            android:scaleType="fitXY"
+            android:contentDescription="@string/todo" />
 
         <TextView
             android:id="@+id/txttenalbum"
@@ -30,7 +31,7 @@
             android:layout_marginRight="2dp"
             android:ellipsize="end"
             android:maxWidth="200dp"
-            android:text="nang am xa dan"
+            android:text="@string/nang_am_xa_dan"
             android:textColor="#000000"
             android:textSize="20sp">
 
@@ -45,7 +46,7 @@
             android:ellipsize="end"
             android:maxWidth="200dp"
             android:maxLines="1"
-            android:text="son tung mtp"
+            android:text="@string/son_tung_mtp"
             android:textColor="#9e9797"
             android:textSize="15sp">
 

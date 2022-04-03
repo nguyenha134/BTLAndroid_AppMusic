@@ -1,7 +1,6 @@
 package com.google.dunggiaobt.Adapter;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +15,7 @@ import com.google.dunggiaobt.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+
 //vu
 public class BaihathotAdapter extends RecyclerView.Adapter<BaihathotAdapter.ViewHolder>{
     Context context;
@@ -47,7 +47,7 @@ public class BaihathotAdapter extends RecyclerView.Adapter<BaihathotAdapter.View
         return baiHatArrayList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public static class ViewHolder extends RecyclerView.ViewHolder{
         TextView txtTen,txtCasi;
         ImageView imgHinh,imgLuotthich;
         public ViewHolder(View itemView){

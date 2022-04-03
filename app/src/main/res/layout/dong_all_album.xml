@@ -16,15 +16,16 @@
          android:id="@+id/imageviewdanhsachcacalbum"
          android:src="@drawable/ic_launcher_background"
          android:layout_width="160dp"
-         android:layout_height="160dp" >
+         android:layout_height="160dp"
+         android:contentDescription="@string/todo">
      </ImageView>
 
     </FrameLayout>
     <TextView
         android:textSize="15sp"
         android:textColor="#060606"
-        android:text="Album Hay Nhat Viet vd"
-        android:gravity="left"
+        android:text="@string/album_hay_nhat_viet_vd"
+        android:gravity="start"
         android:maxWidth="160dp"
         android:lines="2"
         android:maxLines="2"
@@ -36,7 +37,7 @@
     <TextView
         android:textSize="13sp"
         android:id="@+id/textviewtencasialbum"
-        android:text="son tung mtp"
+        android:text="@string/son_tung_mtp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 

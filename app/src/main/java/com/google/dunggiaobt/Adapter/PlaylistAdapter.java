@@ -1,5 +1,6 @@
 package com.google.dunggiaobt.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,18 +22,19 @@ public class PlaylistAdapter extends ArrayAdapter<Playlist> {
     public PlaylistAdapter(@NonNull Context context, int resource, @NonNull List<Playlist> objects) {
         super(context, resource, objects);
     }
-    class ViewHolder{
+    static class ViewHolder{
         TextView txtTenplaylist;
         ImageView imgbackground,imgplaylist;
     }
+    @SuppressLint("InflateParams")
     @NonNull
     @Override
     public View getView(int position, @Nullable View converView, @NonNull ViewGroup parrent){
-        ViewHolder viewHolder =null;
+        ViewHolder viewHolder;
         if(converView == null){
             LayoutInflater inflater =LayoutInflater.from(getContext()) ;
             converView =inflater.inflate(R.layout.dong_playlist,null);
-            viewHolder =new ViewHolder();
+            viewHolder = new ViewHolder();
             viewHolder.txtTenplaylist =converView.findViewById(R.id.textviewplaylist);
             viewHolder.imgplaylist =converView.findViewById(R.id.imageviewplaylist);
             viewHolder.imgbackground =converView.findViewById(R.id.imageviewbgplaylist);

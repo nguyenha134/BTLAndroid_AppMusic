@@ -8,10 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.dunggiaobt.Adapter.BannerAdapter;
@@ -22,6 +19,7 @@ import com.google.dunggiaobt.Service.Dataservice;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import me.relex.circleindicator.CircleIndicator;
 import retrofit2.Call;
@@ -54,9 +52,9 @@ public class Banner_Fragment extends Fragment {
         Call<List<Quangcao>> callback =dataservice.GetDataBanner();
         callback.enqueue(new Callback<List<Quangcao>>() {
             @Override
-            public void onResponse(Call<List<Quangcao>> call, @NonNull Response<List<Quangcao>> response) {
+            public void onResponse(@NonNull Call<List<Quangcao>> call, @NonNull Response<List<Quangcao>> response) {
                 ArrayList<Quangcao> banner=(ArrayList<Quangcao>)response.body();
-              Log.d("dung11",banner.get(0).getTenBaiHat());
+              Log.d("dung11", Objects.requireNonNull(banner).get(0).getTenBaiHat());
 
                bannerAdapter= new BannerAdapter(getActivity()  ,banner);
                 viewPager.setAdapter(bannerAdapter);
@@ -65,23 +63,20 @@ public class Banner_Fragment extends Fragment {
 
                 handler=new Handler();
 
-               runnable =new Runnable() {
-                   @Override
-                   public void run() {
-                       currentItem=viewPager.getCurrentItem();
-                       currentItem++;
-                       if(currentItem >=viewPager.getAdapter().getItemCount()){
-                           currentItem=0;
-                       }
-                       viewPager.setCurrentItem(currentItem,true);
-                      handler.postDelayed(runnable,4500);
+               runnable = () -> {
+                   currentItem=viewPager.getCurrentItem();
+                   currentItem++;
+                   if(currentItem >= Objects.requireNonNull(viewPager.getAdapter()).getItemCount()){
+                       currentItem=0;
                    }
+                   viewPager.setCurrentItem(currentItem,true);
+                  handler.postDelayed(runnable,4500);
                };
                handler.postDelayed(runnable,4500);
             }
 
             @Override
-            public void onFailure(Call<List<Quangcao>> call, Throwable t) {
+            public void onFailure(@NonNull Call<List<Quangcao>> call, @NonNull Throwable t) {
 
             }
         });
