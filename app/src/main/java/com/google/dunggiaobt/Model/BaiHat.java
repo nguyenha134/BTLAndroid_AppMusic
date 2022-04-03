@@ -7,10 +7,14 @@ public class BaiHat {
     @SerializedName("IdBaiHat")
     @Expose
     private String idbaihat;
-    @SerializedName("TenBaiHat")
+    @SerializedName("Tenbaihat")
     @Expose
     private String tenbaihat;
-    @SerializedName("CaSi")
+    @SerializedName("Hinhbaihat")
+    @Expose
+    private String Hinhbaihat;
+
+    @SerializedName("Casi")
     @Expose
     private String casi;
     @SerializedName("LinkBaiHat")
@@ -19,6 +23,14 @@ public class BaiHat {
     @SerializedName("Luotthich")
     @Expose
     private String luotthich;
+
+    public String getHinhbaihat() {
+        return Hinhbaihat;
+    }
+
+    public void setHinhbaihat(String hinhbaihat) {
+        Hinhbaihat = hinhbaihat;
+    }
 
     public String getCasi() {
         return casi;

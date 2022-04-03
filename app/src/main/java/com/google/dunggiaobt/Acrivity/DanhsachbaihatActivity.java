@@ -74,10 +74,12 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
             SetValueInView(quangcao.getTenBaiHat(),quangcao.getHinhBaiHat());
             GetDataQuangCao(quangcao.getIdQuangCao());
 
+
         }
     }
 
     private void GetDataQuangCao(String idquangcao) {
+
         Dataservice dataservice = APIService.getService();
         Call<List<BaiHat>> callback = dataservice.GetDanhsachbaihattheoquangcao(idquangcao);
         callback.enqueue(new Callback<List<BaiHat>>() {
