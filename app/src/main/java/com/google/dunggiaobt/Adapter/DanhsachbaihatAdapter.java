@@ -49,10 +49,10 @@ public class DanhsachbaihatAdapter extends RecyclerView.Adapter<DanhsachbaihatAd
         ImageView imgluotthich;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtcasi = itemView.findViewById(R.id.texviewtencasi);
+            txtcasi = itemView.findViewById(R.id.textviewtencasi);
             txtindex =itemView.findViewById(R.id.textviewdanhsachindex);
             txttenbaihat =itemView.findViewById(R.id.textviewtenbaihat);
-            imgluotthich = itemView.findViewById(R.id.imageviewluotthichdanhsachbaihat);
+            imgluotthich = itemView.findViewById(R.id.imageviewluotthich);
         }
     }
 }
