@@ -1,18 +1,15 @@
 package com.google.dunggiaobt.Fragment;
 
-import static com.google.dunggiaobt.R.layout.fragment_trangchu;
-
 import android.content.Context;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
 import com.google.dunggiaobt.R;
 
@@ -76,12 +73,9 @@ public class TraChu_Fragment extends Fragment {
     View view;
     @NonNull
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        if (R.layout.fragment_trangchu != 0) {
-            view = inflater.inflate(R.layout.fragment_trangchu,container, false);
-            return view;
-        }
-        return null;
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.fragment_trangchu,container, false);
+        return view;
 
     }
     public  void  reLoadData()

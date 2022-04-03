@@ -57,22 +57,19 @@ private  BottomNavigationView mBottomNavigationView;
 
             }
         });
-        mBottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
-            @Override
-            public void onNavigationItemReselected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.menu_tab_1:
-                        mViewPager.setCurrentItem(0);
-                        TraChu_Fragment tab1Fragment= (TraChu_Fragment) mViewPager.getAdapter().instantiateItem(mViewPager,0);
-                        tab1Fragment.reLoadData();
-                        break;
-                    case R.id.menu_tab_2:
-                        mViewPager.setCurrentItem(1);
-                        break;
-                    case R.id.menu_tab_3:
-                        mViewPager.setCurrentItem(2);
-                        break;
-                }
+        mBottomNavigationView.setOnNavigationItemReselectedListener(item -> {
+            switch (item.getItemId()){
+                case R.id.menu_tab_1:
+                    mViewPager.setCurrentItem(0);
+                    TraChu_Fragment tab1Fragment= (TraChu_Fragment) mViewPager.getAdapter().instantiateItem(mViewPager,0);
+                    tab1Fragment.reLoadData();
+                    break;
+                case R.id.menu_tab_2:
+                    mViewPager.setCurrentItem(1);
+                    break;
+                case R.id.menu_tab_3:
+                    mViewPager.setCurrentItem(2);
+                    break;
             }
         });
     }

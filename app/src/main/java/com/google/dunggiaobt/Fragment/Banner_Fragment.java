@@ -40,14 +40,11 @@ public class Banner_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
        super.onCreateView(inflater, container, savedInstanceState);
-        if (R.layout.fragment_banner != 0) {
-            view = inflater.inflate(R.layout.fragment_banner,container, false);
-            viewPager= view.findViewById(R.id.view_pager_2);
-            anhxa();
-            GetData();
-            return view;
-        }
-        return null;
+        view = inflater.inflate(R.layout.fragment_banner,container, false);
+        viewPager= view.findViewById(R.id.view_pager_2);
+        anhxa();
+        GetData();
+        return view;
     }
     private void  anhxa(){
     //   circleIndicator=view.findViewById(R.id.indicatordefault);
@@ -57,7 +54,7 @@ public class Banner_Fragment extends Fragment {
         Call<List<Quangcao>> callback =dataservice.GetDataBanner();
         callback.enqueue(new Callback<List<Quangcao>>() {
             @Override
-            public void onResponse(Call<List<Quangcao>> call, Response<List<Quangcao>> response) {
+            public void onResponse(Call<List<Quangcao>> call, @NonNull Response<List<Quangcao>> response) {
                 ArrayList<Quangcao> banner=(ArrayList<Quangcao>)response.body();
               Log.d("dung11",banner.get(0).getTenBaiHat());
 

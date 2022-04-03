@@ -11,6 +11,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:layout="@layout/fragment_banner"></fragment>
+
+    <!--Cong - Begin-->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_two"
+        android:name="com.google.dunggiaobt.Fragment.TopicAndCategoryFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </androidx.fragment.app.FragmentContainerView>
+    <!--Cong - End-->
+
     <!--begin truong-->
     <fragment
         android:id="@+id/fragment_album_hot"

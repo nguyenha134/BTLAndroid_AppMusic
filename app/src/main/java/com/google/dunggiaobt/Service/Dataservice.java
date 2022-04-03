@@ -1,12 +1,17 @@
 package com.google.dunggiaobt.Service;
 
 import com.google.dunggiaobt.Model.Album;
+import com.google.dunggiaobt.Model.BaiHat;
+import com.google.dunggiaobt.Model.Playlist;
 import com.google.dunggiaobt.Model.Quangcao;
+import com.google.dunggiaobt.Model.TopicAndCategory;
 
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.http.Field;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 
 public interface Dataservice {
 
@@ -24,6 +29,10 @@ public interface Dataservice {
     Call<List<BaiHat>> GetBaiHatHot();
     @POST("danhsachbaihat.php")
     Call<List<BaiHat>> GetDanhsachbaihattheoquangcao(@Field("idquangcao") String idquangcao);
+
+    //Cong
+    @GET("TopicAndCategory.php")
+    Call<TopicAndCategory> GetTopicAndCategory();
 
 
 }
