@@ -2,23 +2,38 @@ package com.google.dunggiaobt.Model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-//vu
-public class Playlist {
-    private  String idPlaylist;
-    private  String TenBai;
+
+import java.io.Serializable;
+
+public class Playlist implements Serializable {
+
+    @SerializedName("IdPlaylist")
+    @Expose
+    private String idPlaylist;
+    @SerializedName("Ten")
+    @Expose
+    private String ten;
+    @SerializedName("HinhPlaylist")
+    @Expose
     private String hinhPlaylist;
-    private  String Icon;
+    @SerializedName("Icon")
+    @Expose
+    private String icon;
 
     public String getIdPlaylist() {
         return idPlaylist;
     }
 
-    public void setTenBai(String tenBai) {
-        TenBai = tenBai;
+    public void setIdPlaylist(String idPlaylist) {
+        this.idPlaylist = idPlaylist;
     }
 
-    public String getTenBai() {
-        return TenBai;
+    public String getTen() {
+        return ten;
+    }
+
+    public void setTen(String ten) {
+        this.ten = ten;
     }
 
     public String getHinhPlaylist() {
@@ -29,17 +44,12 @@ public class Playlist {
         this.hinhPlaylist = hinhPlaylist;
     }
 
-    public void setIdPlaylist(String idPlaylist) {
-        this.idPlaylist = idPlaylist;
-    }
-
     public String getIcon() {
-        return Icon;
+        return icon;
     }
 
     public void setIcon(String icon) {
-        Icon = icon;
+        this.icon = icon;
     }
 
 }
-
