@@ -35,6 +35,14 @@ public interface Dataservice {
     //Cong
     @GET("TopicAndCategory.php")
     Call<TopicAndCategory> GetTopicAndCategory();
+    
+    //Ha
+     @FormUrlEncoded
+    @POST("danhsachbaihat.php")
+    Call<List<BaiHat>> GetDanhsachbaitheoplaylist(@Field("idplaylist") String idplaylist);
+
+    @GET("danhsachplaylist.php")
+    Call<List<Playlist>> GetDanhsachcacPlaylist();
 
 
 }
