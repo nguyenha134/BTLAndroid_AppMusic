@@ -49,6 +49,8 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
     Quangcao quangcao;
     ArrayList<BaiHat> mangbaihat;
     DanhsachbaihatAdapter danhsachbaihatAdapter;
+
+    //dung đã xem
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
