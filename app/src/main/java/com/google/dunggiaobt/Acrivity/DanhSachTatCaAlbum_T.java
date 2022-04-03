@@ -21,9 +21,9 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-//truong
+
 public class DanhSachTatCaAlbum_T extends AppCompatActivity {
-//    //tu album hot staractivity sang day
+    //    //tu album hot staractivity sang day
     RecyclerView recyclerViewallalbum;
     Toolbar toolbarallalbum;
     AllAlbumAdapter_T allAlbumAdapter_t;
@@ -54,9 +54,9 @@ public class DanhSachTatCaAlbum_T extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Album>> call, Response<List<Album>> response) {
                 ArrayList<Album> albumArrayList= (ArrayList<Album>)response.body();
-               allAlbumAdapter_t =new AllAlbumAdapter_T(DanhSachTatCaAlbum_T.this,albumArrayList);
-               recyclerViewallalbum.setLayoutManager(new GridLayoutManager(DanhSachTatCaAlbum_T.this,2));
-               recyclerViewallalbum.setAdapter(allAlbumAdapter_t);
+                allAlbumAdapter_t =new AllAlbumAdapter_T(DanhSachTatCaAlbum_T.this,albumArrayList);
+                recyclerViewallalbum.setLayoutManager(new GridLayoutManager(DanhSachTatCaAlbum_T.this,2));
+                recyclerViewallalbum.setAdapter(allAlbumAdapter_t);
             }
 
             @Override

@@ -1,6 +1,7 @@
 package com.google.dunggiaobt.Fragment;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.dunggiaobt.Acrivity.DanhSachTatCaAlbum_T;
 import com.google.dunggiaobt.Adapter.AlbumAdapter_T;
 import com.google.dunggiaobt.Model.Album;
 import com.google.dunggiaobt.R;
@@ -40,9 +42,20 @@ public class Fragment_Album_Hot_T extends Fragment {
             recyclerViewalbum=view.findViewById(R.id.recyclerviewabum);
             txtxemthemalbum=view.findViewById(R.id.textviewxemthem);
             txtalbumhot=view.findViewById(R.id.textviewtitleAlbumm);
+
+            txtxemthemalbum.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent=new Intent(getActivity(), DanhSachTatCaAlbum_T.class);
+                    startActivity(intent);
+                }
+            });
             GetData();
             return view;
         }
+
+
+
         return  null;
     }
     private void GetData() {
@@ -52,7 +65,7 @@ public class Fragment_Album_Hot_T extends Fragment {
             @Override
             public void onResponse(Call<List<Album>> call, Response<List<Album>> response) {
                 ArrayList<Album> albumArrayList= (ArrayList<Album>)response.body();
-                Log.d("dung11",albumArrayList.get(2).getTenAlbum());
+                // Log.d("dung11",albumArrayList.get(2).getTenAlbum());
 
                 albumAdapterT =new AlbumAdapter_T(getActivity(),albumArrayList);
                 LinearLayoutManager linearLayoutManager= new LinearLayoutManager(getActivity());
