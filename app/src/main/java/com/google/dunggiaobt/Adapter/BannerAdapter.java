@@ -1,6 +1,7 @@
 package com.google.dunggiaobt.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.dunggiaobt.Acrivity.DanhsachbaihatActivity;
 import com.google.dunggiaobt.Model.Quangcao;
 import com.google.dunggiaobt.R;
 import com.squareup.picasso.Picasso;
@@ -73,6 +75,16 @@ public class BannerAdapter extends RecyclerView.Adapter{
         txtNoidung.setText(arrayListBanner.get(position).getNoidung());
         Position++;
      //   parent.addView(heroView);
+
+        int finalPosition = position;
+        heroView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context, DanhsachbaihatActivity.class);
+                intent.putExtra("banner",(Quangcao) arrayListBanner.get(finalPosition));
+                context.startActivity(intent);
+            }
+        });
         return viewHolder;
 
     }

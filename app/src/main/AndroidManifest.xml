@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dunggiaobt">
         <activity
+            android:name=".Acrivity.DanhsachbaihatActivity"
+            android:exported="false" />
+        <activity
             android:name=".Acrivity.DanhSachTatCaAlbum_T"
             android:exported="false" />
         <activity
