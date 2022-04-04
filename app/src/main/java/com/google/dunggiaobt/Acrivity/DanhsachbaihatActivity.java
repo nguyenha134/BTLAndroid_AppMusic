@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.dunggiaobt.Adapter.DanhsachbaihatAdapter;
+import com.google.dunggiaobt.Model.Album;
 import com.google.dunggiaobt.Model.BaiHat;
 import com.google.dunggiaobt.Model.Playlist;
 import com.google.dunggiaobt.Model.Quangcao;
@@ -48,6 +49,7 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
     FloatingActionButton floatingActionButton;
     ImageView imgDanhsachcakhuc;
     Quangcao quangcao;
+    Album album;
     ArrayList<BaiHat> mangbaihat;
     DanhsachbaihatAdapter danhsachbaihatAdapter;
     Playlist playlist;
@@ -89,6 +91,7 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
     }
 
     private  void init(){
+        //Ha
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -99,7 +102,37 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
         });
         collapsingToolbarLayout.setExpandedTitleColor(Color.WHITE);
         collapsingToolbarLayout.setCollapsedTitleTextColor(Color.WHITE);
+        //end ha
+        if(quangcao !=null && !quangcao.getTenBaiHat().equals("")){
+            SetValueInView(quangcao.getTenBaiHat(),quangcao.getHinhBaiHat());
+            GetDataQuangCao(quangcao.getIdQuangCao());
+        }
+        //truong
+        if(album !=null && !album.getTenAlbum().equals("")){
+            SetValueInView(album.getTenAlbum(),album.getHinhAlbum());
+            GetDaTaAlbum(album.getIdAlbum());
+        }
+        //end truong
 
+    }
+
+    //truong
+    private void GetDaTaAlbum(String idAlbum) {
+        Dataservice dataservice = APIService.getService();
+        Call<List<BaiHat>> callback = dataservice.GetDanhsachbaihattheoalbum(idAlbum);
+        callback.enqueue(new Callback<List<BaiHat>>() {
+            @Override
+            public void onResponse(Call<List<BaiHat>> call, Response<List<BaiHat>> response) {
+                mangbaihat=(ArrayList<BaiHat>) response.body();
+                danhsachbaihatAdapter = new DanhsachbaihatAdapter(DanhsachbaihatActivity.this,mangbaihat);
+                recyclerViewdanhsachbaihat.setLayoutManager(new LinearLayoutManager(DanhsachbaihatActivity.this));
+                recyclerViewdanhsachbaihat.setAdapter(danhsachbaihatAdapter);
+            }
+            @Override
+            public void onFailure(Call<List<BaiHat>> call, Throwable t) {
+
+            }
+        });
     }
 
     private void GetDataQuangCao(String idquangcao) {
@@ -154,9 +187,18 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
             if(intent.hasExtra("banner")){
                 quangcao =(Quangcao) intent.getSerializableExtra("banner");
             }
+            //ha
             if(intent.hasExtra("itemplaylist")){
                 playlist = (Playlist) intent.getSerializableExtra("itemplaylist");
             }
+            //end ha
+            //truong
+            if(intent.hasExtra("album"))
+            {
+                album = (Album) intent.getSerializableExtra("album");
+                Toast.makeText(this,album.getTenAlbum(),Toast.LENGTH_SHORT).show();
+            }
+            //end truong
         }
     }
 }
