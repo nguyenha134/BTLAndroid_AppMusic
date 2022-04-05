@@ -16,7 +16,7 @@
         android:layout_height="wrap_content" />
 
     <ListView
-        android:layout_below="@id/listviewplaylist"
+        android:layout_below="@id/textviewtitleplaylist"
         android:id="@+id/listviewplaylist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

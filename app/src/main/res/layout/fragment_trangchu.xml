@@ -1,54 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <fragment
-        android:id="@+id/fragment_one"
-        android:name="com.google.dunggiaobt.Fragment.Banner_Fragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout="@layout/fragment_banner" />
-
-    <!--Cong - Begin-->
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragment_two"
-        android:name="com.google.dunggiaobt.Fragment.TopicAndCategoryFragment"
+    android:layout_height="wrap_content"
+    android:scrollbars="none"
+    android:fillViewport="true">
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    </androidx.fragment.app.FragmentContainerView>
-    <!--Cong - End-->
 
-    <!--begin truong-->
-    <fragment
-        android:id="@+id/fragment_album_hot"
-        android:name="com.google.dunggiaobt.Fragment.Fragment_Album_Hot_T"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        <fragment
+            android:id="@+id/fragment_one"
+            android:name="com.google.dunggiaobt.Fragment.Banner_Fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/fragment_banner" />
+        <!--begin truong-->
+        <fragment
+            android:id="@+id/fragment_album_hot"
+            android:name="com.google.dunggiaobt.Fragment.Fragment_Album_Hot_T"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <!--   end truong-->
 
-        />
-    <!--    end truong-->
-<!--    &lt;!&ndash;VU&ndash;&gt;-->
-<!--    <fragment-->
-<!--        android:id="@+id/fragment_playlist"-->
-<!--        class="com.google.dunggiaobt.Fragment.Fragment_PLaylist"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        tools:layout="@layout/fragment_banner"></fragment>-->
-<!--     <fragment-->
-<!--        android:id="@+id/fragment_bai_hat_hot"-->
-<!--        class="com.google.dunggiaobt.Fragment.Fragment_Bai_Hat_Hot"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        tools:layout="@layout/fragment_banner"></fragment>-->
-<!--    &lt;!&ndash;Vuend&ndash;&gt;-->
+        <!--Cong - Begin-->
+        <fragment
+            android:id="@+id/fragment_two"
+            android:name="com.google.dunggiaobt.Fragment.TopicAndCategoryFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </fragment>
+        <!--Cong - End-->
         <fragment
             android:id="@+id/fragment_playlist"
-            class="com.google.dunggiaobt.Fragment.Fragment_PLaylist"
+            android:name="com.google.dunggiaobt.Fragment.Fragment_PLaylist"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:usesCleartextTraffic="true"
-            tools:layout="@layout/fragment_banner"></fragment>
-</LinearLayout>
+            android:layout_height="wrap_content"
+            android:usesCleartextTraffic="true"></fragment>
+
+    </LinearLayout>
+</ScrollView>
+
+

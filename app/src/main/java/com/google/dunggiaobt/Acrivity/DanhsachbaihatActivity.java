@@ -112,7 +112,6 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
         }
 
     }
-  //  ArrayList<BaiHat> mangbaihat1;
     //truong
     private void GetDaTaAlbum(String idAlbum) {
         Dataservice dataservice = APIService.getService();
@@ -195,7 +194,6 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
             if(intent.hasExtra("album"))
             {
                 album = (Album) intent.getSerializableExtra("album");
-                Toast.makeText(this,album.getTenAlbum(),Toast.LENGTH_SHORT).show();
             }
             //end truong
         }

@@ -46,15 +46,11 @@ public class DanhsachcacplaylistActivity extends AppCompatActivity {
                 recyclerViewdanhsachcacplaylist.setLayoutManager(new GridLayoutManager(DanhsachcacplaylistActivity.this, 2));
                 recyclerViewdanhsachcacplaylist.setAdapter(danhsachcacplaylistAdapter);
             }
-
             @Override
             public void onFailure(Call<List<Playlist>> call, Throwable t) {
-
             }
         });
-
     }
-
     private void init(){
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

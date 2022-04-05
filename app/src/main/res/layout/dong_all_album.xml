@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:layout_margin="1dp"
+    android:layout_marginLeft="10dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -21,25 +21,25 @@
      </ImageView>
 
     </FrameLayout>
+
     <TextView
-        android:textSize="15sp"
-        android:textColor="#060606"
-        android:text="@string/album_hay_nhat_viet_vd"
-        android:gravity="start"
-        android:maxWidth="160dp"
-        android:lines="2"
-        android:maxLines="2"
-        android:ellipsize="end"
         android:id="@+id/textviewtendanhsachcacalbum"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    </TextView>
+        android:layout_height="20dp"
+        android:ellipsize="end"
+        android:gravity="start"
+        android:lines="2"
+        android:maxWidth="160dp"
+        android:maxLines="2"
+        android:text="@string/album_hay_nhat_viet_vd"
+        android:textColor="#060606"
+        android:textSize="15sp"></TextView>
     <TextView
-        android:textSize="13sp"
         android:id="@+id/textviewtencasialbum"
-        android:text="@string/son_tung_mtp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:text="@string/son_tung_mtp"
+        android:textSize="13sp">
 
     </TextView>
 
