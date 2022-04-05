@@ -60,15 +60,7 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
         DataIntent();
         anhxa();
         init();
-        if(quangcao !=null && !quangcao.getTenBaiHat().equals("")){
-            SetValueInView(quangcao.getTenBaiHat(),quangcao.getHinhBaiHat());
-            GetDataQuangCao(quangcao.getIdQuangCao());
 
-        }
-        if(playlist!=null && !playlist.getTen().equals("")){
-            SetValueInView(playlist.getTen(), playlist.getHinhPlaylist());
-            GetDataPlaylist(playlist.getIdPlaylist());
-        }
     }
 
     private void GetDataPlaylist(String idplaylist) {
@@ -106,16 +98,21 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
         if(quangcao !=null && !quangcao.getTenBaiHat().equals("")){
             SetValueInView(quangcao.getTenBaiHat(),quangcao.getHinhBaiHat());
             GetDataQuangCao(quangcao.getIdQuangCao());
-        }
+         }
         //truong
         if(album !=null && !album.getTenAlbum().equals("")){
             SetValueInView(album.getTenAlbum(),album.getHinhAlbum());
-            GetDaTaAlbum(album.getIdAlbum());
+           GetDaTaAlbum(album.getIdAlbum());
         }
         //end truong
 
-    }
+        if(playlist!=null && !playlist.getTen().equals("")){
+            SetValueInView(playlist.getTen(), playlist.getHinhPlaylist());
+            GetDataPlaylist(playlist.getIdPlaylist());
+        }
 
+    }
+  //  ArrayList<BaiHat> mangbaihat1;
     //truong
     private void GetDaTaAlbum(String idAlbum) {
         Dataservice dataservice = APIService.getService();
@@ -142,8 +139,10 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<BaiHat>> call, Response<List<BaiHat>> response) {
                 mangbaihat=(ArrayList<BaiHat>) response.body();
-                //Log.d("BBB",mangbaihat.get(0).getTenbaihat());
+                Toast.makeText(DanhsachbaihatActivity.this, mangbaihat.size()+" 2", Toast.LENGTH_SHORT).show();
                 danhsachbaihatAdapter = new DanhsachbaihatAdapter(DanhsachbaihatActivity.this,mangbaihat);
+                recyclerViewdanhsachbaihat.setLayoutManager(new LinearLayoutManager(DanhsachbaihatActivity.this));
+
                 recyclerViewdanhsachbaihat.setAdapter(danhsachbaihatAdapter);
 
             }
@@ -186,7 +185,7 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
         if(intent!= null){
             if(intent.hasExtra("banner")){
                 quangcao =(Quangcao) intent.getSerializableExtra("banner");
-            }
+                }
             //ha
             if(intent.hasExtra("itemplaylist")){
                 playlist = (Playlist) intent.getSerializableExtra("itemplaylist");

@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,16 +27,17 @@ public class DanhsachbaihatAdapter extends RecyclerView.Adapter<DanhsachbaihatAd
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater =LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.activity_danhsachbaihat,parent,false);
+        View view = inflater.inflate(R.layout.dong_danh_sach_bai_hat,parent,false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         BaiHat baihat =mangbaihat.get(position);
+
         holder.txtcasi.setText(baihat.getCasi());
-        holder.txttenbaihat.setText(baihat.getTenbaihat());
-        holder.txtindex.setText(position+1+"");
+       holder.txttenbaihat.setText(baihat.getTenbaihat());
+       holder.txtindex.setText(position+1+"");
 
     }
 

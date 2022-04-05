@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/BTLAndroid_AppMusic/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Android/BTLAndroid_AppMusic/app/src/main/res/layout/activity_danhsachbaihat.xml" value="0.1" />
+        <entry key="..\:/Android/BTLAndroid_AppMusic/app/src/main/res/layout/dong_bai_hat_hot.xml" value="0.2" />
+        <entry key="..\:/Android/BTLAndroid_AppMusic/app/src/main/res/layout/dong_danh_sach_bai_hat.xml" value="0.1" />
+        <entry key="..\:/Android/BTLAndroid_AppMusic/app/src/main/res/layout/fragment_playlist.xml" value="0.1" />
+        <entry key="..\:/Android/BTLAndroid_AppMusic/app/src/main/res/layout/fragment_trangchu.xml" value="0.1" />
         <entry key="..\:/BTLAndroid_AppMusic/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/BTLAndroid_AppMusic/app/src/main/res/layout/dong_album.xml" value="0.264" />
         <entry key="..\:/BTLAndroid_AppMusic/app/src/main/res/layout/dong_banner.xml" value="0.16666666666666666" />

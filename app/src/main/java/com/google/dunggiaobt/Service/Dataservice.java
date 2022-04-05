@@ -24,7 +24,7 @@ public interface Dataservice {
     @GET("tatcaalbum.php")
     Call<List<Album>> GetAllAlbum();
     //Vu
-    @GET("playlistforcurrentday.php")
+    @GET("playlistforcurrentday%20.php")
     Call<List<Playlist>> GetPlaylistCurrentDay();
     @GET("baihatduocthich.php")
     Call<List<BaiHat>> GetBaiHatHot();
@@ -38,11 +38,15 @@ public interface Dataservice {
     
     //Ha
      @FormUrlEncoded
-    @POST("danhsachbaihat.php")
+    @POST("danhsachcacbaihat.php")
     Call<List<BaiHat>> GetDanhsachbaitheoplaylist(@Field("idplaylist") String idplaylist);
 
     @GET("danhsachplaylist.php")
     Call<List<Playlist>> GetDanhsachcacPlaylist();
-
+    //begin truong
+    @FormUrlEncoded
+    @POST("danhsachcacbaihat.php")
+    Call<List<BaiHat>> GetDanhsachbaihattheoalbum(@Field("idalbum") String idalbum);
+    //end truong
 
 }

@@ -12,10 +12,12 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.dunggiaobt.Acrivity.DanhsachbaihatActivity;
 import com.google.dunggiaobt.Acrivity.DanhsachcacplaylistActivity;
@@ -32,7 +34,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Fragment_Playlist extends Fragment {
+public class Fragment_PLaylist extends Fragment {
     View view;
     ListView lvpLaylist;
     TextView txttitleplaylist, txtviewxemthemplaylist;
@@ -66,7 +68,9 @@ public class Fragment_Playlist extends Fragment {
             @Override
             public void onResponse(Call<List<Playlist>> call, Response<List<Playlist>> response) {
                 mangplaylist =(ArrayList<Playlist>) response.body();
+               Log.d("dung","22");
                 playlistAdapter = new PlaylistAdapter(getActivity(), android.R.layout.simple_list_item_1,mangplaylist);
+
                 lvpLaylist.setAdapter(playlistAdapter);
                 setListViewHeightBasedOnChildren(lvpLaylist);
                 lvpLaylist.setOnItemClickListener(new AdapterView.OnItemClickListener() {

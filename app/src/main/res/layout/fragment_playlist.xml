@@ -39,6 +39,6 @@
         android:text="@string/xem_th_m_playlist"
         android:textColor="#0a0a0a"
         android:textSize="19sp"
-        app:drawableLeftCompat="@drawable/ic_launcher_background"
+        app:drawableLeftCompat="@drawable/iconmoreplaylist"
         tools:ignore="RtlSymmetry" />
 </RelativeLayout>
